@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore the Nuvio ecosystem: Android phone and TV forks, desktop clients, community web deployments and upstream repositories.">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101722" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nuvio Ecosystem — Fork & Deployment Directory">
+<meta property="og:description" content="A structured directory of Nuvio clients, community forks and web deployments.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nuvio Ecosystem Directory">
+<meta name="twitter:description" content="Explore Nuvio mobile, TV, desktop and web projects.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{const t=localStorage.getItem('nuvio-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark'}catch(e){}</script>
+<title>Nuvio Ecosystem — Fork & Deployment Directory</title>
+<style>
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:root{
+ --bg:#f4f6f9;--surface:#fff;--surface2:#eef2f6;--text:#172334;--muted:#647286;
+ --line:#dce3eb;--accent:#2463a6;--accent-soft:#e8f1fb;--chip:#edf1f5;
+ --shadow:0 8px 28px rgba(22,38,58,.06);--nav:rgba(255,255,255,.9);
+}
+:root[data-theme="dark"]{
+ --bg:#101722;--surface:#182332;--surface2:#202e3f;--text:#e8eef6;--muted:#a4b1c2;
+ --line:#2d3c4e;--accent:#8ab9ee;--accent-soft:#22364c;--chip:#263547;
+ --shadow:0 10px 32px rgba(0,0,0,.18);--nav:rgba(16,23,34,.9);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:30;background:var(--surface);color:var(--text);padding:10px 14px;border:2px solid var(--accent);border-radius:8px}
+.skip-link:focus{top:10px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .2s,color .2s}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+button,input{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.03em;color:var(--text)}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--accent);display:grid;place-items:center;color:white;font-weight:800;font-size:15px}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:600}
+.navlinks a{color:var(--muted)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:9px;padding:9px 12px;min-height:42px;cursor:pointer;font-size:13px;font-weight:650}
+.mobile-nav{display:none;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px;min-height:42px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 18px}
+.search{flex:1;min-width:240px;min-height:44px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 13px;color:var(--text)}
+.search:focus{border-color:var(--accent)}
+.results-count{align-self:center;color:var(--muted);font-size:12px}
+.hero{padding:64px 0 42px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.055em;margin:13px 0 15px;max-width:820px}
+.lede{font-size:17px;max-width:730px;color:var(--muted);margin:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.pill{background:var(--chip);border:1px solid var(--line);padding:5px 10px;border-radius:999px;font-size:12px;color:var(--muted);font-weight:650}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.stat strong{display:block;font-size:25px;letter-spacing:-.04em}
+.stat span{font-size:12px;color:var(--muted)}
+.section{padding:30px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:17px}
+h2{font-size:25px;letter-spacing:-.035em;margin:0}
+.section-sub{color:var(--muted);margin:5px 0 0;font-size:14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 20px}
+.search{flex:1;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 13px;color:var(--text);outline:none}
+.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.filter{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:10px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:19px;box-shadow:var(--shadow);min-width:0}
+.card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.rank{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+h3{font-size:18px;line-height:1.3;letter-spacing:-.025em;margin:5px 0 7px}
+.status{font-size:11px;font-weight:700;border-radius:999px;background:var(--accent-soft);color:var(--accent);padding:4px 8px;white-space:nowrap}
+.repo{font-size:13px;font-weight:650;overflow-wrap:anywhere}
+.card p{color:var(--muted);font-size:13px;margin:11px 0}
+.features{margin:12px 0 0;padding-left:18px;color:var(--text);font-size:13px}
+.features li{margin:5px 0}
+.card-foot{border-top:1px solid var(--line);margin-top:15px;padding-top:12px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;font-weight:650}
+.notice{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);border-radius:10px;padding:15px 17px;color:var(--muted);font-size:13px;margin-top:16px}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tech{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.tech h3{margin-top:0}
+.tech p{font-size:13px;color:var(--muted);margin-bottom:0}
+.web-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.web-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px}
+.web-item h3{font-size:16px}
+.web-item p{font-size:13px;color:var(--muted);margin:8px 0}
+.linkline{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;font-weight:700;margin-top:12px}
+.excluded{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.excluded article{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:15px}
+.excluded strong{font-size:13px}
+.excluded p{font-size:12px;color:var(--muted);margin:5px 0 0}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:12px;margin-top:30px}
+footer .footrow{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.backtop{position:fixed;right:20px;bottom:20px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:10px 14px;min-height:44px;box-shadow:var(--shadow);cursor:pointer;display:none}
+.backtop.visible{display:block}
+[hidden]{display:none!important}
+.empty{display:none;padding:24px;color:var(--muted);text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+@media(max-width:760px){
+ .navlinks{display:none}.mobile-nav{display:block}.hero{padding:45px 0 30px}.stats{grid-template-columns:repeat(2,1fr)}
+ .grid,.tech-grid,.web-list,.excluded{grid-template-columns:1fr}
+ .section-head{display:block}.section{padding:24px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media print{header,.backtop,.toolbar{display:none!important}body{background:#fff;color:#111}.card,.stat,.tech,.web-item{box-shadow:none;break-inside:avoid}a{color:#111;text-decoration:underline}.section{padding:12px 0}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top"><span class="brand-mark">N</span><span>Nuvio Ecosystem Directory</span></a>
+  <nav class="navlinks" aria-label="Main navigation">
+   <a href="#overview">Overview</a><a href="#mobile">Mobile</a><a href="#tv">Android TV</a><a href="#desktop">Desktop</a><a href="#web">Web</a>
+  </nav>
+  <label class="sr-only" for="mobileNav" hidden>Navigate to section</label><select class="mobile-nav" id="mobileNav" aria-label="Navigate to section"><option value="#overview">Overview</option><option value="#mobile">Mobile</option><option value="#tv">Android TV</option><option value="#desktop">Desktop</option><option value="#web">Web</option><option value="#technical">Technical context</option></select>
+  <button class="theme" id="themeToggle" type="button" aria-label="Switch colour theme">☾ Dark mode</button>
+ </div>
+</header>
+
+<main id="main-content" class="wrap">
+ <section class="hero" id="overview">
+  <div class="eyebrow">Community ecosystem map · 2026 edition</div>
+  <h1>Nuvio forks, clients<br>and web deployments.</h1>
+  <p class="lede">A platform-by-platform directory of the Nuvio ecosystem, bringing notable community builds and upstream projects into one navigable reference.</p>
+  <div class="toolbar" role="search"><label class="sr-only" for="directorySearch">Search the directory</label><input class="search" id="directorySearch" type="search" placeholder="Search projects, features, platforms or maintainers…" autocomplete="off"><span class="results-count" id="resultsCount" aria-live="polite">Showing all projects</span></div>
+  <div class="hero-meta"><span class="pill">Android Phone</span><span class="pill">Android TV</span><span class="pill">Windows / Desktop</span><span class="pill">Web deployments</span></div>
+  <div class="stats">
+   <div class="stat"><strong>4</strong><span>Platform categories</span></div>
+   <div class="stat"><strong>17</strong><span>Projects and deployments listed</span></div>
+   <div class="stat"><strong>2026</strong><span>Directory edition</span></div>
+   <div class="stat"><strong>01</strong><span>Upstream ecosystem</span></div>
+  </div>
+  <div class="notice">This directory presents the descriptions and ranking contained in the supplied reference document. A repository or deployment link opens the corresponding project page; availability, releases and feature claims can change over time. Independent forks are not official Nuvio releases unless explicitly identified as upstream.</div>
+ </section>
+
+ <section class="section" id="mobile">
+  <div class="section-head"><div><div class="eyebrow">01 / Android phone</div><h2>Mobile forks</h2><p class="section-sub">Community builds and the official reference app.</p></div></div>
+  <div class="grid">
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 01</div><h3>Nuvio Mobile Enhanced</h3><a class="repo" href="https://github.com/luqmanfadlli/NuvioMobile-Enhanced" target="_blank" rel="noopener">luqmanfadlli / NuvioMobile-Enhanced ↗</a></div><span class="status">Active · v0.6.6-beta</span></div><p>Presented in the source document as the active successor to the earlier yesnt10 enhanced fork.</p><ul class="features"><li>Merges upstream Kotlin Multiplatform improvements.</li><li>Addresses Trakt scrobble timeouts and stream-scraper issues.</li><li>Updates ExoPlayer buffer behaviour.</li></ul><div class="card-foot"><a href="https://github.com/luqmanfadlli/NuvioMobile-Enhanced/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://github.com/luqmanfadlli/NuvioMobile-Enhanced/issues" target="_blank" rel="noopener">Issues ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 02</div><h3>Nuvio Mobile Reshaped</h3><a class="repo" href="https://github.com/DavidVamaiotu/NuvioMobile-Reshaped" target="_blank" rel="noopener">DavidVamaiotu / NuvioMobile-Reshaped ↗</a></div><span class="status">Active · Oct 2026</span></div><p>A mobile fork focused on subtitle timing, stream selection and interface customisation.</p><ul class="features"><li>Automatic subtitle synchronisation.</li><li>Dynamic stream selection matched to network bandwidth.</li><li>Pure AMOLED black theme and custom catalogue row filtering.</li></ul><div class="card-foot"><a href="https://github.com/DavidVamaiotu/NuvioMobile-Reshaped/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://github.com/DavidVamaiotu/NuvioMobile-Reshaped/issues" target="_blank" rel="noopener">Issues ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 03</div><h3>NuvioPro</h3><a class="repo" href="https://github.com/albertovinaroz/NuvioPro" target="_blank" rel="noopener">albertovinaroz / NuvioPro ↗</a></div><span class="status">Maintained · Oct 2026</span></div><p>Convenience-focused additions around downloads and playback preferences.</p><ul class="features"><li>SAF custom download-directory picker.</li><li>Background caching.</li><li>Per-stream subtitle offset persistence.</li></ul><div class="card-foot"><a href="https://github.com/albertovinaroz/NuvioPro/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 04</div><h3>Official Nuvio Mobile</h3><a class="repo" href="https://github.com/NuvioMedia/NuvioMobile" target="_blank" rel="noopener">NuvioMedia / NuvioMobile ↗</a></div><span class="status">Upstream</span></div><p>The official reference implementation and baseline for mobile builds. The source document notes that some community convenience features, such as gesture scrubbing, are not part of its comparison.</p><div class="card-foot"><a href="https://github.com/NuvioMedia/NuvioMobile/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://nuvio.tv" target="_blank" rel="noopener">Official website ↗</a></div></article>
+  </div>
+  <div class="notice"><strong>Excluded from the source ranking:</strong> <a href="https://github.com/yesnt10/NuvioMobile-Enhanced" target="_blank" rel="noopener">yesnt10/NuvioMobile-Enhanced</a> — described as stalled and superseded by the luqmanfadlli branch; <a href="https://github.com/AKRusso/NuvioMobile-Enhanced" target="_blank" rel="noopener">AKRusso/NuvioMobile-Enhanced</a> — described as a divergent branch with crash issues on newer add-on manifests.</div>
+ </section>
+
+ <section class="section" id="tv">
+  <div class="section-head"><div><div class="eyebrow">02 / Android TV</div><h2>TV forks</h2><p class="section-sub">Builds prioritising remote navigation, playback and large-screen use.</p></div></div>
+  <div class="grid">
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 01</div><h3>Nuvio Arc</h3><a class="repo" href="https://github.com/ysosrs123/NuvioTV-Fork" target="_blank" rel="noopener">ysosrs123 / NuvioTV-Fork ↗</a></div><span class="status">Active · Nov 2026</span></div><p>Ranked first in the source document for its TV-first interface and high-end playback focus.</p><ul class="features"><li>10-foot D-pad interface and focus-navigation fixes.</li><li>Video seek thumbnails and lossless audio passthrough, including Dolby TrueHD and DTS-HD MA.</li><li>Jellyfin / Emby / Silo library integration with watch-party sync.</li></ul><div class="card-foot"><a href="https://github.com/ysosrs123/NuvioTV-Fork/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://github.com/ysosrs123/NuvioTV-Fork/issues" target="_blank" rel="noopener">Issues ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 02</div><h3>NuvioTV Custom</h3><a class="repo" href="https://github.com/Cxsmo-ai/NuvioTV-Custom" target="_blank" rel="noopener">Cxsmo-ai / NuvioTV-Custom ↗</a></div><span class="status">Active · Oct 2026</span></div><p>A custom Android TV fork built around progressive source discovery and a richer TV experience.</p><ul class="features"><li>Asynchronous scraper discovery intended to prevent UI freezes.</li><li>Integrated TV release calendar.</li><li>Optimised 4K / HDR buffer allocation.</li></ul><div class="card-foot"><a href="https://github.com/Cxsmo-ai/NuvioTV-Custom/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://github.com/Cxsmo-ai/NuvioTV-Custom/issues" target="_blank" rel="noopener">Issues ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 03</div><h3>NuvioTV Reshaped</h3><a class="repo" href="https://github.com/DavidVamaiotu/NuvioTV-Reshaped" target="_blank" rel="noopener">DavidVamaiotu / NuvioTV-Reshaped ↗</a></div><span class="status">Active · Oct 2026</span></div><p>Brings Reshaped's subtitle and network-aware playback approach to Android TV.</p><ul class="features"><li>Automatic subtitle synchronisation.</li><li>Live bandwidth-aware stream matching.</li><li>Custom home-screen swimlanes for TV.</li></ul><div class="card-foot"><a href="https://github.com/DavidVamaiotu/NuvioTV-Reshaped/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 04</div><h3>Official NuvioTV</h3><a class="repo" href="https://github.com/NuvioMedia/NuvioTV" target="_blank" rel="noopener">NuvioMedia / NuvioTV ↗</a></div><span class="status">Upstream</span></div><p>The official Android TV baseline. The source document describes it as stable while noting focus-retention limitations on some lower-spec streaming sticks and the absence of seek thumbnails in its comparison.</p><div class="card-foot"><a href="https://github.com/NuvioMedia/NuvioTV/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://nuvio.tv" target="_blank" rel="noopener">Official website ↗</a></div></article>
+  </div>
+  <div class="notice"><strong>Excluded from the source ranking:</strong> <a href="https://github.com/hackerslash/NuvioTV-Lite" target="_blank" rel="noopener">hackerslash/NuvioTV-Lite</a> — described as over-stripped with A/V sync and frame-drop issues; <a href="https://github.com/Esmequiinn/NuvioTVSmart-Roku" target="_blank" rel="noopener">Esmequiinn/NuvioTVSmart-Roku</a> — described as an incomplete Roku proof-of-concept, not an Android TV build.</div>
+ </section>
+
+ <section class="section" id="desktop">
+  <div class="section-head"><div><div class="eyebrow">03 / Windows and desktop</div><h2>Desktop forks</h2><p class="section-sub">Desktop player integrations, keyboard controls and HTPC-oriented interfaces.</p></div></div>
+  <div class="grid">
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 01</div><h3>NuvioCodeineXO</h3><a class="repo" href="https://github.com/codeineXO/NuvioCodeineXO" target="_blank" rel="noopener">codeineXO / NuvioCodeineXO ↗</a></div><span class="status">Active · Oct 2026</span></div><p>Ranked first in the source document as a feature-rich Windows desktop build.</p><ul class="features"><li>Integrated MPV, Anime4K shaders and 60 FPS motion interpolation.</li><li>Anime filler markers, seek previews and detailed subtitle styling.</li><li>TV-style keyboard navigation, isolated local app data and in-app updater.</li></ul><div class="card-foot"><a href="https://github.com/codeineXO/NuvioCodeineXO/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 02</div><h3>Nuvio Desktop Unofficial</h3><a class="repo" href="https://github.com/CreepsoOff/NuvioDesktop-Unofficial" target="_blank" rel="noopener">CreepsoOff / NuvioDesktop-Unofficial ↗</a></div><span class="status">Active · Oct 2026</span></div><p>Windows-focused high-performance fork with embedded libmpv and GPU hardware decoding, including DXVA2 and NVDEC.</p><div class="card-foot"><a href="https://github.com/CreepsoOff/NuvioDesktop-Unofficial/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 03</div><h3>Nuvio HTPC</h3><a class="repo" href="https://github.com/UmbraProjects/NuvioDesktop" target="_blank" rel="noopener">UmbraProjects / NuvioDesktop ↗</a></div><span class="status">Maintained · v1.7</span></div><p>Designed for living-room PCs and handheld devices.</p><ul class="features"><li>10-foot TV interface and XInput gamepad support.</li><li>Colour profiles and HDR tone mapping.</li><li>PostersPlus dynamic artwork badges.</li></ul><div class="card-foot"><a href="https://github.com/UmbraProjects/NuvioDesktop/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 04</div><h3>Nuvio Desktop Unofficial</h3><a class="repo" href="https://github.com/aelrased/NuvioDesktop-unofficial" target="_blank" rel="noopener">aelrased / NuvioDesktop-unofficial ↗</a></div><span class="status">Maintained · Oct 2026</span></div><p>Windows and Linux build with automatic handoff to external players such as MPV, VLC and MPC-BE.</p><div class="card-foot"><a href="https://github.com/aelrased/NuvioDesktop-unofficial/releases" target="_blank" rel="noopener">Releases ↗</a></div></article>
+   <article class="card searchable"><div class="card-top"><div><div class="rank">Rank 05</div><h3>Official Nuvio Desktop</h3><a class="repo" href="https://github.com/NuvioMedia/NuvioDesktop" target="_blank" rel="noopener">NuvioMedia / NuvioDesktop ↗</a></div><span class="status">Upstream · Alpha</span></div><p>Official desktop alpha included as the upstream baseline. The source document notes higher idle CPU usage and a more limited player-shader feature set in its comparison.</p><div class="card-foot"><a href="https://github.com/NuvioMedia/NuvioDesktop/releases" target="_blank" rel="noopener">Releases ↗</a><a href="https://nuvio.tv" target="_blank" rel="noopener">Official website ↗</a></div></article>
+  </div>
+  <div class="notice"><strong>Excluded from the source ranking:</strong> <a href="https://github.com/StreamCut" target="_blank" rel="noopener">StreamCut</a> — a video clipping / scene-trimming utility rather than a daily streaming client; <a href="https://github.com/blarns/NuvioForLinux" target="_blank" rel="noopener">blarns/NuvioForLinux</a> — described as archived in August 2026; <a href="https://github.com/wifi-x-smasher/nuvio-windows-unofficial" target="_blank" rel="noopener">wifi-x-smasher/nuvio-windows-unofficial</a> — described as dormant with multi-monitor DPI issues.</div>
+ </section>
+
+ <section class="section" id="web">
+  <div class="section-head"><div><div class="eyebrow">04 / Browser and smart TV</div><h2>Web deployments</h2><p class="section-sub">Community-hosted web clients and upstream smart-TV web engines.</p></div></div>
+  <div class="web-list">
+   <article class="web-item searchable"><div class="rank">Rank 01 · Live PWA</div><h3><a href="https://nuvio.alphasquare.my.id" target="_blank" rel="noopener">Nuvio Web — AlphaSquare ↗</a></h3><p>Listed as a live PWA deployment, with a GitHub Pages mirror, proxy rewrites, responsive touch / keyboard UI, local manifest persistence and external-player dispatch.</p><div class="linkline"><a href="https://nuvio.alphasquare.my.id" target="_blank" rel="noopener">Open deployment ↗</a><a href="https://lucaboox.github.io/nuvio-web" target="_blank" rel="noopener">GitHub Pages mirror ↗</a><a href="https://github.com/lucaboox/nuvio-web" target="_blank" rel="noopener">Source repository ↗</a></div></article>
+   <article class="web-item searchable"><div class="rank">Rank 02 · Live</div><h3><a href="https://nuvioweb.xyz" target="_blank" rel="noopener">Nuvio Web — nuvioweb.xyz ↗</a></h3><p>Listed as an edge-hosted web mirror with account / Trakt sync and a client-side resolver aimed at H.264 / AAC compatibility.</p><div class="linkline"><a href="https://nuvioweb.xyz" target="_blank" rel="noopener">Open deployment ↗</a><a href="https://github.com/saurabhhbansal/nuvioweb" target="_blank" rel="noopener">Source repository ↗</a></div></article>
+   <article class="web-item searchable"><div class="rank">Rank 03 · Container deployment</div><h3><a href="https://github.com/Gross-spuriouswing378/NuvioWeb" target="_blank" rel="noopener">NuvioWeb — Docker deployment ↗</a></h3><p>Listed as a self-hosted Docker distribution for unRAID, TrueNAS and home VPS environments behind reverse proxies.</p><div class="linkline"><a href="https://github.com/Gross-spuriouswing378/NuvioWeb" target="_blank" rel="noopener">Source repository ↗</a></div></article>
+   <article class="web-item searchable"><div class="rank">Rank 04 · Upstream web engine</div><h3><a href="https://github.com/NuvioMedia/NuvioTVSmart" target="_blank" rel="noopener">NuvioTVSmart / NuvioTVWebOS ↗</a></h3><p>Official source repositories for smart-TV browsers and web runtimes, including LG webOS and Samsung Tizen packages.</p><div class="linkline"><a href="https://github.com/NuvioMedia/NuvioTVSmart" target="_blank" rel="noopener">NuvioTVSmart ↗</a><a href="https://github.com/NuvioMedia/NuvioTVWebOS" target="_blank" rel="noopener">NuvioTVWebOS ↗</a><a href="https://github.com/NuvioMedia" target="_blank" rel="noopener">NuvioMedia GitHub ↗</a></div></article>
+  </div>
+  <div class="notice"><strong>Web hosting context:</strong> The reference document says the original browser-hosted experience was decommissioned by NuvioMedia in mid-2026 as focus shifted to smart-TV packages. It also lists the following as defunct or unavailable: <a href="https://web.nuvioapp.space" target="_blank" rel="noopener">web.nuvioapp.space</a>, <a href="https://nuvioweb.space" target="_blank" rel="noopener">nuvioweb.space</a>, and a closed-source “Nuvio Stream X Beta” distribution. These are retained as historical notes, not recommended working links.</div>
+ </section>
+
+ <section class="section" id="technical">
+  <div class="section-head"><div><div class="eyebrow">05 / Background</div><h2>Technical context</h2><p class="section-sub">How the ecosystem is organised, according to the supplied directory.</p></div></div>
+  <div class="tech-grid">
+   <article class="tech"><h3>Browser hosting shift</h3><p>The source document describes the original Nuvio browser-hosted service as decommissioned in mid-2026. Development attention shifted toward smart-TV packages, including <a href="https://github.com/NuvioMedia/NuvioTVSmart" target="_blank" rel="noopener">NuvioTVSmart</a> and <a href="https://github.com/NuvioMedia/NuvioTVWebOS" target="_blank" rel="noopener">NuvioTVWebOS</a>, with package formats noted as .ipk for LG webOS and .wgt for Samsung Tizen.</p></article>
+   <article class="tech"><h3>Community deployments</h3><p>Independent community deployments use personal domains and GitHub Pages. They are separate hosting projects and should not be confused with an official NuvioMedia-operated web service.</p></article>
+   <article class="tech"><h3>Fork discovery caveat</h3><p>The source document notes that traversal of the GitHub fork tree was incomplete and may have missed downstream maintainers, including <a href="https://github.com/luqmanfadlli" target="_blank" rel="noopener">luqmanfadlli</a>, <a href="https://github.com/codeineXO" target="_blank" rel="noopener">codeineXO</a> and <a href="https://github.com/Cxsmo-ai" target="_blank" rel="noopener">Cxsmo-ai</a>.</p></article>
+   <article class="tech"><h3>How to use this directory</h3><p>Open the repository link for source code, Releases for installable builds, and Issues for project-specific support. Check the latest release notes and device compatibility before installing any community fork.</p></article>
+  </div>
+ </section>
+</main>
+
+<footer><div class="wrap footrow"><span>NUVIO ECOSYSTEM DIRECTORY · 2026</span><span>Independent community reference · Not affiliated with NuvioMedia</span><span>Content basis: supplied reference document; project details may change.</span></div></footer>
+<button class="backtop" id="backTop" type="button" aria-label="Back to top">↑ Top</button>
+<script>
+(function(){
+ const root=document.documentElement,btn=document.getElementById('themeToggle');
+ function setTheme(t){root.dataset.theme=t;btn.textContent=t==='dark'?'☀ Light mode':'☾ Dark mode';btn.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' mode');try{localStorage.setItem('nuvio-theme',t)}catch(e){}}
+ const initial=root.dataset.theme||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+ setTheme(initial);
+ btn.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark'));
+ const search=document.getElementById('directorySearch'),count=document.getElementById('resultsCount');
+ const searchable=[...document.querySelectorAll('.searchable')];
+ function filterDirectory(){const q=search.value.trim().toLocaleLowerCase();let shown=0;searchable.forEach(el=>{const match=!q||el.textContent.toLocaleLowerCase().includes(q);el.hidden=!match;if(match)shown++});count.textContent=q?`Showing ${shown} matching project${shown===1?'':'s'}`:'Showing all projects';}
+ search.addEventListener('input',filterDirectory);
+ document.getElementById('mobileNav').addEventListener('change',e=>{if(e.target.value)location.hash=e.target.value});
+ const topBtn=document.getElementById('backTop');
+ window.addEventListener('scroll',()=>topBtn.classList.toggle('visible',window.scrollY>500),{passive:true});
+ topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+})();
+</script>
+</body>
+</html>
